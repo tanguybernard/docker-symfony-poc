@@ -13,21 +13,21 @@
 - docker-compose (Tested with version 1.11.1)
 
 ## Usage
-Build:
+1. Build:
 
     docker-compose build
-Up (-d : background):
+2. Up (-d : background):
 
     docker-compose up -d
 
-Create Symfony 4 project into "webserver" container:
+3. Create Symfony 4 project into "webserver" container:
 
     docker-compose exec webserver composer create-project symfony/skeleton skeleton
 
-Move skeleton to DirectoryRoot:
+4. Move skeleton to DirectoryRoot:
 
     docker-compose exec webserver rsync -ua --delete-after skeleton/ .
 
-Enjoy:
+5. Enjoy:
 
     http://localhost:9000/
