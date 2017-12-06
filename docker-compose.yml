@@ -1,0 +1,36 @@
+version: '2'
+services:
+  db:
+    build: ./docker/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - db:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    hostname: phpmyadmin.local
+    links:
+        - db
+    ports:
+        - 8181:80
+  webserver:
+    container_name: webserver
+    build: 
+      context: .
+      dockerfile: ./docker/webserver/Dockerfile
+      args:
+        - PROJECT=project
+    ports:
+      - 9000:80
+    volumes:
+      - ./project:/var/www/project #project must be created
+    depends_on:
+      - db
+volumes:
+  db:
