@@ -5,6 +5,7 @@
 - php:7.2.0-apache
 - mysql:5.7
 - phpmyadmin/phpmyadmin
+- willdurand/elk
 
 
 ## Prerequisites / Requirements
