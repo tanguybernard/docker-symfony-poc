@@ -52,7 +52,7 @@
             dbal:
                 # configure these for your database server
                 dbname: 'your_database_name'
-                host: db #docker name
+                host: 'db' #docker name, for instance ('db', 'dockersymfonypoc_db_1')
                 port: 3306
                 user: 'your_user_name'
                 password: 'your_user_pass'
@@ -70,3 +70,10 @@
                         alias: App
     ```
     
+## Docker tricks
+
+- Stop and remove a container
+    
+    sudo docker-compose down
+     
+
