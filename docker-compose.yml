@@ -32,18 +32,6 @@ services:
       - ./project:/var/www/project #project must be created
     depends_on:
       - db
-  elk:
-    image: willdurand/elk
-    ports:
-      - "81:80"
-    volumes:
-      - ./docker/logstash/conf:/etc/logstash
-    volumes_from:
-      - dataelk
 
-  dataelk:
-    image: busybox
-    volumes:
-      - /data
 volumes:
   db:
