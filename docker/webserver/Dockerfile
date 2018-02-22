@@ -39,6 +39,8 @@ RUN a2enmod rewrite
 RUN echo 'alias sf="php app/console"' >> ~/.bashrc
 RUN echo "alias ll='ls -l'" >> ~/.bashrc
 
+COPY ./docker/webserver/apache/apache_default /etc/apache2/sites-available/000-default.conf
+
 WORKDIR /var/www/$PROJECT
 
 #INFORMATION
