@@ -95,7 +95,7 @@ _webpack.config.js_
     module.exports = Encore.getWebpackConfig();
 ```
 
-###Example
+### Example
 
 _assets/scss/style.css_
 
