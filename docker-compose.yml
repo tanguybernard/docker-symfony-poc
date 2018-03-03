@@ -1,6 +1,8 @@
-version: '2'
+version: '3'
+
 services:
   db:
+    env_file: .env
     build: ./docker/mysql
     ports:
       - 3306:3306
@@ -32,6 +34,17 @@ services:
       - ./project:/var/www/project #project must be created
     depends_on:
       - db
-
+  react:
+    container_name: react_app
+    build:
+      context: .
+      dockerfile: ./docker/react/Dockerfile
+    ports:
+      - 3000:3000
+    links:
+      - webserver  
+    volumes:
+      - ./react:/usr/src/app
+    command: yarn start  
 volumes:
-  db:
+  db:  
