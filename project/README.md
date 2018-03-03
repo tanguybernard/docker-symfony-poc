@@ -1,5 +1,26 @@
 # Symfony 4 Project
 
+## Apache (Optional, but needed if using apache)
+
+    composer require symfony/apache-pack
+
+## Maker
+
+### Install
+
+    composer require maker --dev
+
+### Example
+
+Create controller
+
+    php bin/console make:controller NameOfController 
+
+Create entity (and repository)
+
+    php bin/console make:entity NameOfEntity
+
+
 ## Doctrine ORM (Optional)
 1. Require package:
     
@@ -137,18 +158,15 @@ _templates/base.html.twig_
 
 Compile assets once
 
-```
     yarn run encore dev
-```
+
 
 Recompile assets automatically when files change
 
-```
     yarn run encore dev --watch
-```
  
 Compile assets but also minify & optimize them
 
-```
     yarn run encore production
-```
+
+    
