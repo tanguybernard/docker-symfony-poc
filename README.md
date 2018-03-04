@@ -28,13 +28,9 @@
 
 4. Create Symfony 4 project into "webserver" container:
 
-        docker-compose exec webserver composer create-project symfony/skeleton skeleton
+        docker-compose exec webserver composer create-project symfony/skeleton .
 
-5. Move skeleton to DirectoryRoot:
-
-        docker-compose exec webserver rsync -ua --delete-after skeleton/ .
-
-6. Enjoy:
+5. Enjoy:
 
     http://localhost:9000/
     
